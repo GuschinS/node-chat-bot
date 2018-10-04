@@ -1,0 +1,201 @@
+
+<div>
+    <nav class="navigation-bar">
+        <div class="navigation-items">
+            <div class="navigation-item">
+                <a href="/" class="navigation-link">Main</a>
+            </div>
+            <div class="navigation-item">
+                <a href="#" class="navigation-link">Chatbot</a>
+            </div>
+        </div>
+        <div class="navigation-image">
+            <div class="image-container">
+                <img class="microphone-image" src="/images/google_mic.png" alt="">
+            </div>
+            <h1 class="chat-bot-title">Dialogflow chatbot</h1>
+        </div>
+    </nav>
+    <div class="chat-bot-main-wrapper">
+        <section class="chat-bot-container">
+            <!--div class="message-wrapper">
+                <div class="message message-person">
+                    <p class="message-text output-you">...</p>
+                </div>
+                <div class="avatar avatar-person">
+                    <span>You</span>
+                </div>
+            </div>
+            <div class="message-wrapper">
+                <div class="avatar avatar-bot">
+                    <span>bot</span>
+                </div>
+                <div class="message message-bot">
+                    <p class="message-text output-bot">...</p>
+                </div>
+            </div-->
+        </section>
+    </div>
+</div>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial;
+    }
+
+    .navigation-bar {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background-color: #ffffff;
+    }
+
+    .navigation-items {
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .navigation-item {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navigation-link {
+        text-decoration: none;
+        color: #000000;
+        padding: 21px 25px;
+        display: block;
+    }
+
+    .navigation-link:hover {
+        background-color: #f3f3f3;
+    }
+
+    .navigation-image {
+        background-color: #ffffff;
+        margin-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .chat-bot-main-wrapper {
+        position: static;
+        width: 500px;
+        margin: 0 auto;
+        padding-bottom: 20px;
+    }
+
+    .chat-bot-title {
+        text-align: center;
+        font-size: 16px;
+        padding-top: 10px;
+    }
+
+    .image-container {
+        cursor: pointer;
+        width: 125px;
+        height: 125px;
+        margin: 0 auto;
+        border-radius: 50%;
+        display: flex;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-container:active {
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0);
+    }
+
+    .microphone-image {
+        width: 50px;
+    }
+
+    .avatar {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -30px;
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .avatar-person {
+        flex: 0 0 64px;
+        margin-left: 25px;
+    }
+
+    .avatar-bot {
+        flex: 0 0 64px;
+        margin-right: 25px;
+    }
+
+    .message-wrapper {
+        margin: 45px 0 0 0;
+        display: flex;
+    }
+
+    .message {
+        display: block;
+        padding: 15px;
+        position: relative;
+        color: #000000;
+        font-size: 15px;
+        background-color: #ffffff;
+        border-radius: 3px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        flex: 1 1 auto;
+    }
+
+    .message:before {
+        content: '';
+        position: absolute;
+        border-top: 16px solid rgba(0,0,0,0.15);
+        border-left: 16px solid transparent;
+        border-right: 16px solid transparent;
+    }
+
+    .message:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        border-top: 17px solid #ffffff;
+        border-left: 17px solid transparent;
+        border-right: 17px solid transparent;
+    }
+
+    .message-person:before {
+        margin: -14px -18px 0 0;
+        right: 0;
+    }
+
+    .message-person:after {
+        right: 0;
+        margin: 0 -17px 0 0;
+    }
+
+    .message-bot:before {
+        margin: -14px 0 0 -18px;
+        left: 0;
+    }
+
+    .message-bot:after {
+        content: '';
+        left: 0;
+        margin: 0 0 0 -17px;
+    }
+
+    .message-text {
+        margin: 0px;
+    }
+</style>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/speech_recognition.js"></script>
